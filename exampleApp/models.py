@@ -8,13 +8,16 @@ class Snippet(models.Model):
   age = models.IntegerField(null=True)
   gender  = models.CharField(max_length=1, choices=GENDER_CHOICES, default='M')  
   #REFER TO https://docs.djangoproject.com/en/dev/ref/models/fields/#field-choices
-  
   monthlyIncome = models.PositiveIntegerField(null=True)
   essentialExpenses = models.PositiveIntegerField(null=True)
   personalSavings = models.PositiveIntegerField(null=True)
   availDownPay = models.PositiveIntegerField(null=True)
   existingLoan = models.PositiveIntegerField(null=True)
   locations = models.CharField(max_length=100, choices=LOCATION_CHOICES)
+
+  y1 = models.CharField(max_length=1, choices=YES_NO_CHOICES, default = 'YES')
+  y2 = models.CharField(max_length=1, choices=YES_NO_CHOICES, default = 'YES')
+  y3 = models.CharField(max_length=1, choices=YES_NO_CHOICES, default = 'YES')
 
   #LOCATIONS = import from Nigel's
   #LOCATIONS = (('AMK','Ang Mo Kio'), ('SRG', 'Serangoon'), ('WLDS', 'Woodlands'))

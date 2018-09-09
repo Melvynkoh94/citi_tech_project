@@ -4,7 +4,7 @@ from .forms import UserForm, SnippetForm, UserForm_extended
 from .CitiTech_BuyerClass import *
 from .HouseDatabaseGenerator import *
 
-# Create your views here.
+# Create your views here
 def home(request):
   return render(request, 'exampleApp/home.html')
 
@@ -17,6 +17,9 @@ def form(request):
     form = UserForm(request.POST) #create a UserForm instance and populate it with data from the request (binding)
     # Check if the form is valid
     if form.is_valid():
+      ##########################
+      request.session['web_input'] = request.POST['web_input']
+
       age = form.cleaned_data['age']
       gender = form.data['gender']
       monthlyIncome = form.cleaned_data['monthlyIncome']
@@ -36,15 +39,14 @@ def form(request):
       print('Housing List: '+ str(shownHousingList))
       print()
 
-      #location = form.data['location'] #MultiValueDictKeyError at /exampleApp/form/  ERROR!!!
       print('from views.form: VALID')
       print(age, gender, monthlyIncome, essentialExpenses, personalSavings, essentialExpenses, personalSavings, availDownPay, existingLoan, locations) #just to check on the console if this works
-
   form = UserForm()
   return render(request, 'exampleApp/form.html', {'form': form})
 
-
 def form_extended(request):
+  ##########################
+  url = request.session.get('web_input')
   if request.method == 'POST':
     print('In views.form_extended')
     form_extended = UserForm_extended(request.POST)
@@ -62,6 +64,64 @@ def form_extended(request):
   
   form_extended = UserForm_extended() 
   return render(request, 'exampleApp/form_extended.html', {'form_extended': form_extended})
+
+def houseView(request):
+  url = request.session.get('web_input')
+  if request.method == 'POST':
+    form_extended = UserForm_extended(request.POST)
+    if form_extended.is_valid():
+      y1 = form_extended.cleaned_data['y1']
+      y2 = form_extended.cleaned_data['y2']
+      y3 = form_extended.cleaned_data['y3']
+
+      print('y1: '+y1)
+      print('y2: '+y2)
+      print('y3: '+y3)    
+      print('VALID')
+
+      form_extended.save()
+  
+  form_extended = UserForm_extended() 
+  return render(request, 'exampleApp/house1.html', {'form_extended': form_extended})
+
+def houseView2(request):
+  url = request.session.get('web_input')
+  if request.method == 'POST':
+    form_extended = UserForm_extended(request.POST)
+    if form_extended.is_valid():
+      y1 = form_extended.cleaned_data['y1']
+      y2 = form_extended.cleaned_data['y2']
+      y3 = form_extended.cleaned_data['y3']
+
+      print('y1: '+y1)
+      print('y2: '+y2)
+      print('y3: '+y3)    
+      print('VALID')
+
+      form_extended.save()
+  
+  form_extended = UserForm_extended() 
+  return render(request, 'exampleApp/house2.html', {'form_extended': form_extended})
+
+def houseView3(request):
+  url = request.session.get('web_input')
+  if request.method == 'POST':
+    form_extended = UserForm_extended(request.POST)
+    if form_extended.is_valid():
+      y1 = form_extended.cleaned_data['y1']
+      y2 = form_extended.cleaned_data['y2']
+      y3 = form_extended.cleaned_data['y3']
+
+      print('y1: '+y1)
+      print('y2: '+y2)
+      print('y3: '+y3)    
+      print('VALID')
+
+      form_extended.save()
+  
+  form_extended = UserForm_extended() 
+  return render(request, 'exampleApp/house3.html', {'form_extended': form_extended})
+
      
 
 
