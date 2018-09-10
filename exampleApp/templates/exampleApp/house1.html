@@ -8,13 +8,24 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>House1</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
 </head>
-<body>
-  <p>HOUSE 1</p>
+<body style="padding: 20px;">
+  <p>'PROPERTYNAME' $120,000 4-room Tampines</p>
   <img src="/media/house1.jpg" alt="House 1" width="400" height="400">
+  <table style="width:100%">
+      <tr>
+        <th>Type</th>
+        <th>Floor Size</th>
+        <th>Developer</th>
+      </tr>
+      <tr>
+        <td>4-Room</td>
+        <td>2542 sqft</td>
+        <td>Tampines Condominium Pte Ltd</td>
+      </tr>
+    </table>
   <h4>________________________________________________________________________________________________________________________</h4>
-  <form action="">
+  <form action="/exampleApp/about/" method="POST">
     {% crispy form_extended form_extended.helper %}
   </form>
 </body>

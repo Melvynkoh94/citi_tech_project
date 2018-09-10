@@ -37,7 +37,7 @@ class UserForm(forms.Form):
 class UserForm_extended(forms.Form):
   y1 = forms.ChoiceField(choices=YES_NO_CHOICES, label='Are you a first time homeowner?')
   y2 = forms.ChoiceField(choices=YES_NO_CHOICES, label='Are you staying within 4km from your parents?')
-  y3 = forms.ChoiceField(choices=YES_NO_CHOICES, label='At least 1 of the applicants must have worked continuously for 12 months prior to the flat application, and still be employed at the point of flat application. Is this true for you?')
+  y3 = forms.ChoiceField(choices=YES_NO_CHOICES, label='At least 1 of the applicants have worked continuously for 12 months prior to the flat application and still be employed at the point of flat application. Is this true for you?')
 
   #constructor
   def __init__(self, *args, **kwargs):
