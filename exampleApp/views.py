@@ -4,6 +4,7 @@ from .forms import UserForm, SnippetForm, UserForm_extended
 from .CitiTech_BuyerClass import *
 from .HouseDatabaseGenerator import *
 
+
 # Create your views here
 def home(request):
   return render(request, 'exampleApp/home.html')
