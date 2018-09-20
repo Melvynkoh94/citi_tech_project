@@ -5,9 +5,12 @@ from .CitiTech_BuyerClass import *
 from .HouseDatabaseGenerator import *
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 import scipy as sp
 >>>>>>> c00074a906882553293e9ffaec2e3cacde5a4d33
+=======
+>>>>>>> ff61622a7691ce3a80e56d114e2fca2236902c03
 
 # Create your views here
 def home(request):
