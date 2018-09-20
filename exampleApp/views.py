@@ -4,6 +4,10 @@ from .forms import UserForm, SnippetForm, UserForm_extended
 from .CitiTech_BuyerClass import *
 from .HouseDatabaseGenerator import *
 
+<<<<<<< HEAD
+=======
+import scipy as sp
+>>>>>>> c00074a906882553293e9ffaec2e3cacde5a4d33
 
 # Create your views here
 def home(request):
