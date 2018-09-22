@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 
+SESSION_EXPIRE_SECONDS = 2
+SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
+
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 #MEDIA_URL = '/media/'
@@ -38,6 +42,7 @@ INSTALLED_APPS = [
     'exampleApp.apps.ExampleappConfig', #added this
     'crispy_forms', #added this
     'multiselectfield', #added this
+    #'django-session-timeout',   #added this
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,6 +52,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'django.contrib.sessions.middleware.SessionMiddleware',  #added this
+    'django_session_timeout.middleware.SessionTimeoutMiddleware',    #added this
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -55,6 +62,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
+
 
 ROOT_URLCONF = 'citi_tech.urls'
 
@@ -124,6 +134,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+
+#####my static image files
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')

@@ -1,0 +1,48 @@
+{% load static %}
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>User Input Form</title>
+        <link rel="stylesheet" id="ample-style-css" href="{% static 'style.css' %}" type="text/css" media="all">
+    </head>
+    <body class="wide">
+        <div id="page" class="hfeed site">
+            <header>
+                <div class="header">
+                    <div class="main-head-wrap inner-wrap clearfix">
+                        <div id="header-logo-image">
+                            <a href="/">
+                                <img src="{% static 'logo_1.png' %}">
+                            </a>
+                        </div>
+                        <div id="header-text" class="">
+                            <h1 id="site-title">
+                                <a href="/" title="Wisdom Pet Medicine" rel="home">Financial Planning of Real Estate</a>
+                            </h1>
+                            
+                        </div>
+                    </div>
+                    <img src="{% static 'header_1.jpg' %}">
+                </div>
+            </header>
+            <div class="main-wrapper">
+                <div class="single-page clearfix">
+                    <div class="inner-wrap">
+                        <p> </p>
+                        <hr>
+                        <div>
+                        {% block content %}
+                        {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer id="colophon">
+                <div class="inner-wrap">
+                    CITI TECH HACKATHON
+                </div>
+            </footer>
+        </div>
+        <script src="{% static 'main.js' %}"></script>
+    </body>
+</html>

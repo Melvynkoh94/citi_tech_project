@@ -1,3 +1,5 @@
+{% extends "base.html" %}
+{% block content %}
 {% load crispy_forms_tags %}
 
 <!DOCTYPE html>
@@ -7,7 +9,7 @@
   <title>Completion of Form</title>
 </head>
 <body style="padding: 20px;">
-  <h2><u>Results</u></h2>
+  <h2><u>Your Results</u></h2>
   <p><b>You are qualified for a total grant amount of: </b>$120,000</p>
   <p><b>CPF Housing Grant amount: </b>$50,000</p>
   <p><b>Additional CPF Housing Grant amount: </b>$50,000</p>
@@ -22,3 +24,5 @@
 </body>
 
 </html>
+
+{% endblock %}
