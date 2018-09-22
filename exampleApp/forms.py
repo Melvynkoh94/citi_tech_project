@@ -4,6 +4,7 @@ from django import forms
 from .models import Snippet
 from django.core.exceptions import ValidationError
 from .choices import *
+from django.test import TestCase
 
 class UserForm(forms.Form):
   age = forms.IntegerField(initial='30', label='Please define your age, as of this year')

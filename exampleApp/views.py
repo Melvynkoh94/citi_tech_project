@@ -6,21 +6,23 @@ from .CitiTech_BuyerClass import *
 from .HouseDatabaseGenerator import *
 from .push_notification import *
 
-user_num = 100
+user_num = 500
 
 # Create views here
 def home(request):
   return render(request, 'exampleApp/home.html')
 
+
 def about(request):
   return render(request, 'exampleApp/about.html')
 
+
 def form(request):
-  user_num=100
+  user_num=500
   user_num+=1
-  if(user_num>100):
+  if(user_num>500):
     alert_many_users(user_num)
-    
+
   #If this is a POST request then process the Form data
   if (request.method == 'POST'):
     form = UserForm(request.POST) #create a UserForm instance and populate it with data from the request (binding)
