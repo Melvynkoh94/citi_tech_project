@@ -2,8 +2,11 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import UserForm, SnippetForm, UserForm_extended
 from .CitiTech_BuyerClass import *
+#from .CitiTech_BuyerClass_Final import *
 from .HouseDatabaseGenerator import *
+from .push_notification import *
 
+user_num = 100
 
 # Create views here
 def home(request):
@@ -13,11 +16,20 @@ def about(request):
   return render(request, 'exampleApp/about.html')
 
 def form(request):
+  user_num=100
+  user_num+=1
+  if(user_num>100):
+    alert_many_users(user_num)
   #If this is a POST request then process the Form data
   if (request.method == 'POST'):
     form = UserForm(request.POST) #create a UserForm instance and populate it with data from the request (binding)
-    # Check if the form is valid
+    # Check if he form is valid
     if form.is_valid():
+      push_notification()
+      ##########################
+      #if(user_num>100):
+        #push_notification()
+
       ##########################
       request.session['web_input'] = request.POST['web_input']
 
