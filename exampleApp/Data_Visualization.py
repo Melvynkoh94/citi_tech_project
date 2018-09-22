@@ -12,6 +12,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 df = pd.read_excel("testA.xlsx") #open file
+df =df[1:]
+df.columns = ["datetime","age","gender","monthlyIncome","essentialExpenses","personalSavings","availDownPay",\
+                "existingLoan","locations"]
 
 date_time_hour=df["datetime"].str.split("-",expand=True)
 date = date_time_hour[0] + "-" + date_time_hour[1] + "-" + date_time_hour[2]
