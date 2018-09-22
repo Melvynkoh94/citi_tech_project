@@ -28,7 +28,9 @@ parameter = input("Insert parameter to query: ")
 
 def hourly_traffic_by_date(input_date): #Visualizing user traffic by hour on a specific day
     data = df[df["date"]==input_date]
-    pd.value_counts(data['time']).plot.bar()
+    pd.value_counts(data["time"]).sort_index().plot.bar()
+    plt.xlabel("Hour of the Day")
+    plt.ylabel("User Traffic per Hour")
 
 def user_profile(parameter): #Visualizing a summary of user count categorised by given parameter
     print (df.groupby([parameter]).size().sort_values(ascending=False))
