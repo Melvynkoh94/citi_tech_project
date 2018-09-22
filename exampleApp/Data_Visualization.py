@@ -13,10 +13,6 @@ import matplotlib.pyplot as plt
 
 df = pd.read_excel("test.xlsx")
 
-df_columns = ["datetime","age","gender","monthlyIncome","essentialExpense","personalSavings","availDownPay",\
-"existingLoan","locations"]
-
-df_new_columns = ["Year","Month","Date","Time","Minute","Seconds"]
 
 date_time_hour=df["datetime"].str.split("-",expand=True)
 date = date_time_hour[0] + "-" + date_time_hour[1] + "-" + date_time_hour[2]
