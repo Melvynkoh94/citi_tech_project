@@ -1,6 +1,10 @@
 Installed libraries:
 django
 crispy-form
+pip install django-multiselectfield
+pip install django-session-timeout
+pip install notify-run
+
 
 Path where manage.py resides:
 C:\Users\User\Documents\GitHub\citibank_django\citi_tech
