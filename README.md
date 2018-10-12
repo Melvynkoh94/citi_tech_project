@@ -6,7 +6,7 @@
 
 **Installed libraries:**
 
-  - django
+  - conda install django
   - crispy-form
   - pip install django-multiselectfield
   - pip install django-session-timeout
