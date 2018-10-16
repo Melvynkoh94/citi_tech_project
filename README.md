@@ -24,7 +24,8 @@ $ django-admin
 $ django-admin startproject ProjectName
 ```
 
-**To run the web application on your local machine** -->    *localhost:8000 or 127.0.0.1:8000*
+**To run the web application on your local machine**     
+*localhost:8000 or 127.0.0.1:8000* in your browser
 
 **Every changes to model, run the following in order:**
 1)	Create the migrations (generate the SQL commands)
