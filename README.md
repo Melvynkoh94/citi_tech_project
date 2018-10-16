@@ -16,22 +16,31 @@
   - C:\Users\User\Documents\GitHub\citibank_django\citi_tech
 
 **View list of django-admin commands:**
-  - django-admin
-
+```sh
+$ django-admin
+```
 **Create new website:**
-  - django-admin startproject ProjectName
+```sh
+$ django-admin startproject ProjectName
+```
 
 **To run the web application on your local machine** -->    *localhost:8000 or 127.0.0.1:8000*
 
 **Every changes to model, run the following in order:**
-1)	python manage.py makemigrations	(Create the migrations (generate the SQL commands))
-2)	python manage.py migrate	(Run the migrations (execute the SQL commands))
-
-
+1)	Create the migrations (generate the SQL commands)
+```sh
+$ python manage.py makemigrations
+```
+2)	Run the migrations (execute the SQL commands)
+```sh
+$ python manage.py migrate
+```
 
 **TO START THE WEB APP:**
-1)	python manage.py  runserver
 
+```sh
+$ python manage.py  runserver
+```
 
 > The overriding design goal for Markdown's
 > formatting syntax is to make it as readable
